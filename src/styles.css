@@ -1,0 +1,36 @@
+/* Add application styles & imports to this file! */
+
+body {
+  background-color: #f3f3f3;
+}
+
+.tooltip {
+  max-width: 300px;
+  position: absolute;
+  font-size: 14px;
+  text-align: center;
+  color: #f8f8f2;
+  padding: 3px 8px;
+  background: #666;
+  border-radius: 6px;
+  z-index: 99999999;
+  opacity: 0;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+}
+
+.tooltip-top::after {
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-color: #666 transparent transparent transparent;
+}
+
+.tooltip--show {
+  opacity: 1;
+}

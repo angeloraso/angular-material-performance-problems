@@ -1,0 +1,15 @@
+<cdk-virtual-scroll-viewport
+  #virtualScroll
+  [style.height]="virtualScrollHeight"
+  [itemSize]="itemHeight"
+  [minBufferPx]="itemHeight + 100"
+  [maxBufferPx]="itemHeight + 200"
+  templateCacheSize="60"
+>
+  <ng-content></ng-content>
+  <div *cdkVirtualFor="let item of virtualScrollItems">
+    <ng-container
+      *ngTemplateOutlet="virtualFor.template; context: { $implicit: item }"
+    ></ng-container>
+  </div>
+</cdk-virtual-scroll-viewport>
